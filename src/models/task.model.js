@@ -1,6 +1,12 @@
 import mongoose, { Schema } from "mongoose";
+import { v4 as uuidv4 } from "uuid";
 
 const taskSchema = new Schema({
+  taskId: {
+    type: String,
+    default: uuidv4,
+    unique: true,
+  },
   title: {
     type: String,
     required: true,
